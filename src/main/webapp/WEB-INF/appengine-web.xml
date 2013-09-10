@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appengine-web-app xmlns="http://appengine.google.com/ns/1.0">
+  <application>application_name</application>
+  <version>1</version>
+  <!-- Configure java.util.logging -->
+  <system-properties>
+    <property name="java.util.logging.config.file" value="WEB-INF/logging.properties" />
+    <!-- Sandbox values -->
+    <property name="sandbox_merchant_id" value="sandbox_merchant_id" />
+    <property name="sandbox_merchant_auth_key" value="sandbox_merchant_auth_key" />
+    <property name="sandbox_merchant_js" value="https://wallet-web.sandbox.google.com/online/v2/merchant/merchant.js" />
+    <property name="sandbox_scopes" value="https://www.googleapis.com/auth/plus.login
+https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/paymentssandbox.make_payments"/>
+    <!-- set values for oauth-->
+    <property name="oauth_client_id" value="oauth_client_id" />
+    <property name="oauth_api_key" value="oauth_api_key" />
+    <property name="production_merchant_id" value="production_merchant_id" />
+    <property name="production_merchant_auth_key" value="production_merchant_auth_key" />
+    <property name="merchant_js" value="https://wallet.google.com/online/v2/merchant/merchant.js" />
+    <property name="merchant_name" value="merchant_name" />
+    <property name="scopes" value="https://www.googleapis.com/auth/plus.login
+https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/payments.make_payments"/>
+    <!-- use SANDBOX or PRODUCTION and set the values below -->
+    <property name="online_wallet_enviroment" value="SANDBOX" />
+  </system-properties>
+  <static-files>
+    <include path="**/*.html" />
+    <include path="**/*.js" />
+    <include path="**/*.css" />
+    <include path="**/*.png" />
+    <include path="**/*.jpeg" />
+    <include path="**/*.jpg" />
+    <include path="**/*.gif" />
+    <include path="**/*.psd" />
+    <include path="**/*.ico" />
+    <include path="**/*.woff" />
+    <include path="**/*.svg" />
+    <include path="**/*.ttf" />
+    <include path="**/*.eot" />
+    <include path="*.ico" />
+    <include path="*.html" />
+    <include path="*.js" />
+  </static-files>
+  <resource-files>
+    <include path="css/**" />
+    <include path="css/*" />
+    <include path="css" />
+    <include path="*.vm" />
+  </resource-files>
+  <threadsafe>true</threadsafe>
+  <precompilation-enabled>true</precompilation-enabled>
+  <sessions-enabled>true</sessions-enabled>
+</appengine-web-app>
