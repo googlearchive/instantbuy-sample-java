@@ -45,7 +45,6 @@ public class Config {
   private final String scopes;
   public static final String MERCHANT_NAME = System.getProperty("merchant_name");
   public static final String OAUTH_CLIENT_ID = System.getProperty("oauth_client_id");
-  public static final String OAUTH_API_KEY = System.getProperty("oauth_api_key");
 
   // Set the environment that you're deploying against
   private static Config environment =

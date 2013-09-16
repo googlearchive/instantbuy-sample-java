@@ -14,7 +14,7 @@ To setup the sample, edit webapp/WEB-INF/appengine-web.xml.
 * If environment is PRODUCTION : Replace production_merchant_id, production_merchant_auth_key, merchant_name in appengine-web.xml with your Production Merchant Id, Production Merchant Auth Key, Merchant Name.
 * Else If environment is SANDBOX : Replace sandbox_merchant_id, sandbox_merchant_auth_key, merchant_name in appengine-web.xml with your Sandbox Merchant Id, Sandbox Merchant Auth Key, Merchant Name.
 * Create an API project in the [Google API Console](https://code.google.com/apis/console/) then select the API Access tab in your API project, and click Create an OAuth 2.0 client ID and also enable Google+ API in services tab.
-* Replace oauth_client_id, oauth_api_key in appengine-web.xml with your Oauth Client Id, Oauth Api Key.
+* Replace oauth_client_id in appengine-web.xml with your Oauth Client Id.
 
 ### Google appengine.
 
@@ -22,7 +22,8 @@ To run application on google appengine requires [Google App Engine SDK](https://
 
 1. Create new application at your [appengine account](https://appengine.google.com).
 2. Change application name in webapp/WEB-INF/appengine-web.xml file.
-3. Follow instruction to install google appengine sdk for java and to upload the application on [Google Appengine for Java Docs](https://developers.google.com/appengine/docs/java/gettingstarted/introduction)
+3. Follow instruction to install google appengine sdk for java and to upload the application on [Google Appengine for Java Docs](https://developers.google.com/appengine/docs/java/gettingstarted/introduction).
+4. Create the WAR file using maven plugin for eclipse. Go to [Maven](http://maven.apache.org/) for more details.
 
 ### Local dev.
 

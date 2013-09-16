@@ -71,7 +71,6 @@ public class MainServlet extends HttpServlet {
 
     VelocityContext context = new VelocityContext();
     context.put("clientId", Config.OAUTH_CLIENT_ID);
-    context.put("apiKey", Config.OAUTH_API_KEY);
     context.put("scopes", environment.getScopes());
     if (pageURL != null && pageURL.equals("logout")) {
       helper.getSession().invalidate();

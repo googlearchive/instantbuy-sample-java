@@ -13,7 +13,6 @@
 https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/paymentssandbox.make_payments"/>
     <!-- set values for oauth-->
     <property name="oauth_client_id" value="oauth_client_id" />
-    <property name="oauth_api_key" value="oauth_api_key" />
     <property name="production_merchant_id" value="production_merchant_id" />
     <property name="production_merchant_auth_key" value="production_merchant_auth_key" />
     <property name="merchant_js" value="https://wallet.google.com/online/v2/merchant/merchant.js" />
