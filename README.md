@@ -1,4 +1,4 @@
-Java Quick Start Sample for Instant Buy API Copyright (C) 2013 Google Inc.
+Java Sample for Instant Buy API Copyright (C) 2013 Google Inc.
 
 instantbuy-sample-java
 =======================
