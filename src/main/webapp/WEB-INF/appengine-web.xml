@@ -9,16 +9,14 @@
     <property name="sandbox_merchant_id" value="sandbox_merchant_id" />
     <property name="sandbox_merchant_auth_key" value="sandbox_merchant_auth_key" />
     <property name="sandbox_merchant_js" value="https://wallet-web.sandbox.google.com/online/v2/merchant/merchant.js" />
-    <property name="sandbox_scopes" value="https://www.googleapis.com/auth/plus.me profile 
-https://www.googleapis.com/auth/paymentssandbox.make_payments"/>
+    <property name="sandbox_scopes" value="email profile https://www.googleapis.com/auth/paymentssandbox.make_payments"/>
     <!-- set values for oauth-->
     <property name="oauth_client_id" value="oauth_client_id" />
     <property name="production_merchant_id" value="production_merchant_id" />
     <property name="production_merchant_auth_key" value="production_merchant_auth_key" />
     <property name="merchant_js" value="https://wallet.google.com/online/v2/merchant/merchant.js" />
     <property name="merchant_name" value="merchant_name" />
-    <property name="scopes" value="https://www.googleapis.com/auth/plus.login 
-https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/payments.make_payments"/>
+    <property name="scopes" value="email profile https://www.googleapis.com/auth/payments.make_payments"/>
     <!-- use SANDBOX or PRODUCTION and set the values below -->
     <property name="online_wallet_enviroment" value="SANDBOX" />
   </system-properties>
