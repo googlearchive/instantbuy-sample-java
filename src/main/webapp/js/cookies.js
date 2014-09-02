@@ -14,7 +14,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.setMaskedWallet = function(maskedWallet) {
     // Store MakedWallet in JSON format.
-    $.cookie('maskedWallet', JSON.stringify(maskedWallet));
+    localStorage.setItem('maskedWallet', JSON.stringify(maskedWallet));
   };
 
   /**
@@ -24,7 +24,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.setFullWallet = function(fullWallet) {
     // Store FullWallet in JSON format.
-    $.cookie('fullWallet', JSON.stringify(fullWallet));
+    localStorage.setItem('fullWallet', JSON.stringify(fullWallet));
   };
 
   /**
@@ -35,7 +35,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.setChangeJwt = function(changedJWT) {
     // Store changedJWT in JSON format.
-    $.cookie('changedJwt', JSON.stringify(changedJWT));
+    localStorage.setItem('changedJwt', JSON.stringify(changedJWT));
   };
 
   /**
@@ -47,7 +47,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.setCurrentItem = function(item) {
     // Store current item in JSON format.
-    $.cookie('currentItem', JSON.stringify(item));
+    localStorage.setItem('currentItem', JSON.stringify(item));
   };
 
   /**
@@ -59,7 +59,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.setCartItem = function(cartItem) {
     // Store cart items.
-    $.cookie('cartItem', JSON.stringify(cartItem));
+    localStorage.setItem('cartItem', JSON.stringify(cartItem));
   };
 
   /**
@@ -69,7 +69,7 @@ var bikeStore = bikeStore || {};
    * for a single order.
    */
   cookie.setTransactionId = function(transactionId) {
-    $.cookie('transactionId', transactionId);
+    localStorage.setItem('transactionId', transactionId);
   };
 
   /**
@@ -111,7 +111,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.getMaskedWallet = function() {
     // Convert the obtained cookie into JSON object and return it.
-    return $.cookie('maskedWallet') ? JSON.parse($.cookie('maskedWallet')) :
+    return localStorage.getItem('maskedWallet') ? JSON.parse(localStorage.getItem('maskedWallet')) :
       null;
   }
 
@@ -121,7 +121,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.getFullWallet = function() {
     // Convert the obtained cookie into JSON object and return it.
-    return $.cookie('fullWallet') ? JSON.parse($.cookie('fullWallet')) : null;
+    return localStorage.getItem('fullWallet') ? JSON.parse(localStorage.getItem('fullWallet')) : null;
   };
 
   /**
@@ -130,7 +130,7 @@ var bikeStore = bikeStore || {};
    */
   cookie.getChangeJwt = function() {
     // Convert the obtained cookie into JSON object and return it.
-    return $.cookie('changedJwt') ? JSON.parse($.cookie('changedJwt')) : null;
+    return localStorage.getItem('changedJwt') ? JSON.parse(localStorage.getItem('changedJwt')) : null;
   };
 
   /**
@@ -141,7 +141,7 @@ var bikeStore = bikeStore || {};
   cookie.getCurrentItem = function() {
     // Convert the obtained cookie from JSON format into CurrentItem
     // model and return it.
-    return new Backbone.Model(JSON.parse($.cookie('currentItem')));
+    return new Backbone.Model(JSON.parse(localStorage.getItem('currentItem')));
   };
 
   /**
@@ -157,12 +157,12 @@ var bikeStore = bikeStore || {};
    * @return {Object} This returns cart items as a Cart model.
    */
   cookie.getCartItem = function() {
-    return new Backbone.Collection(JSON.parse($.cookie('cartItem')));
+    return new Backbone.Collection(JSON.parse(localStorage.getItem('cartItem')));
   };
   cookie.updateCartItem = function(modelId, cartItem) {
     cartItem.remove(cartItem.at(modelId));
     // Update cart items.
-    $.cookie('cartItem', JSON.stringify(cartItem));
+    localStorage.getItem('cartItem', JSON.stringify(cartItem));
     bikeStore.Wallet.createButton();
   };
 
@@ -171,6 +171,6 @@ var bikeStore = bikeStore || {};
    * @return {String} This returns the Transaction ID.
    */
   cookie.getTransactionId = function() {
-    return $.cookie('transactionId');
+    return localStorage.getItem('transactionId');
   };
 })(window.bikeStore.Cookie = window.bikeStore.Cookie || {});

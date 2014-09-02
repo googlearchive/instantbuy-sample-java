@@ -137,6 +137,7 @@ var bikeStore = bikeStore || {};
     initCookies();
     // Initialize Wallet if page is being reloaded.
     bikeStore.Wallet.createButton();
+    bikeStore.Wallet.authorize();
   }
 
   /**

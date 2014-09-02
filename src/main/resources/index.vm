@@ -87,6 +87,7 @@
     #set( $loginClasses = "nav-username nav-username-no-width")
     #set( $headingClasses = "nav-filter nav-margin")
   #end
+  var clientId = '$clientId';
   </script>
   </head>
   <body>

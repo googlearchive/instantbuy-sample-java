@@ -42,9 +42,21 @@ var bikeStore = bikeStore || {};
    */
   $(function() {
     accessToken = bikeStore.Cookie.getAccessToken();
-    google.wallet.online.setAccessToken(accessToken);
+    if (accessToken != null)
+      google.wallet.online.setAccessToken(accessToken);
   });
 
+  wallet.authorize = function() {
+    google.wallet.online.authorize({
+      'clientId': clientId,
+      'callback': function(response) {
+        if(response != null){
+          bikeStore.Cookie.setAccessToken(response.access_token);
+          console.log('authorize response' + JSON.stringify(response));
+        }
+      }
+    });
+  };
   /**
    * Helper function to generate the post body that's posted to the server to
    * generate the JWT.
@@ -135,9 +147,7 @@ var bikeStore = bikeStore || {};
     // single order together. It is returned in the Masked Wallet Response.
     // Here we're setting the global Transaction Id.
     wallet.transactionId = param.response.response.googleTransactionId;
-    if ($.cookie('email') == null) {
-      bikeStore.Sso.handleEmail(param.response.response);
-    }
+    bikeStore.Sso.handleEmail(param.response.response);
     // Persist Masked Wallet Response and Transaction Id for page refreshes.
     bikeStore.Cookie.setMaskedWallet(param.response.response);
     bikeStore.Cookie.setTransactionId(wallet.transactionId);
@@ -275,5 +285,6 @@ var bikeStore = bikeStore || {};
         'jwt' : jwt
       });
     });
+    wallet.authorize();
   };
 })(window.bikeStore.Wallet = window.bikeStore.Wallet || {});
